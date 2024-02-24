@@ -1,20 +1,12 @@
-var express = require('express');
-
-const app = express();
-const port = 8000;
-
-const router = require('./router');
-
-app.use(express.json());
-app.use(express.urlencoded({extended:false}));
-//app.use('/', router);
-
-app.listen(port, function(){
-    console.log("Kuunnellaan porttia " + port);
-});
-
-app.get('/',function(request,response){
-    response.send("Pilvipalvelut bundleN REST-API");
-});
-
-module.exports=app;
+const http = require("http"); 
+//create a server object: 
+http 
+  .createServer(function (req, res) { 
+    res.write("<h1>Hello World!</h1>");  
+    //write a response to the client 
+     
+    res.end();  
+    //end the response 
+  }) 
+  .listen(8000);  
+//Server runs on localhost:8080 
