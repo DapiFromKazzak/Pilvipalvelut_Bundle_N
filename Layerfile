@@ -13,3 +13,5 @@ RUN echo 'hello' > hello.html
 
 RUN BACKGROUND http-server -p 8000
 EXPOSE WEBSITE http://localhost:8000
+SECRET ENV Pilvipalvelut
+RUN echo "secret is: $Pilvipalvelut"
